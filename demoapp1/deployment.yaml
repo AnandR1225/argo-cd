@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: prophazedevops/nhb-radius
+        image: prophazedevops/dashboard-testing:1.0.1-commit813cb964
         ports:
         - containerPort: 80
