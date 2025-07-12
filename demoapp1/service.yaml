@@ -19,22 +19,20 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: canary-ingress-1
+  namespace: demoapp1
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - "canary.anrsservice.xyz"
-    secretName: wc-tls-secret
   rules:
-  - host: canary.anrsservice.xyz
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: app1
-            port:
-              number: 80
+    - host: radius.anrsservice.xyz
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: app1
+                port:
+                  number: 80
+
