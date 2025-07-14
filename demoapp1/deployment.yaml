@@ -15,7 +15,7 @@ spec:
         app: app1
     spec:
       containers:
-      - image: prophazedevops/nhb-radius:latest
+      - image: prophazedevops/dashboard-testing:1.0.1-commit75940447
         name: testcontainer
         readinessProbe:
           httpGet:
